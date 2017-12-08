@@ -1,0 +1,29 @@
+{
+	"count": 108,
+	"asanas": [
+		{
+			"id": 1,
+			"name": "shavásana",
+			"category": "relaxamento",
+			"position": "deitado",
+			"tips": "As mãos e pés se afastam levemente, encontrando o ponto de maior conforto. Oriente as palmas das mãos para cima.",
+			"image": "http://melinaflores.org/wp-content/themes/melina/assanas/thumb/01_uttara_shavasana.jpg"
+		},
+		{
+			"id": 2,
+			"name": "puránásana",
+			"category": "dhyánásana",
+			"position": "sentado",
+			"tips": "Mantenha a coluna ereta e as pernas estendidas.",
+			"image": "http://melinaflores.org/wp-content/themes/melina/assanas/thumb/02_raja_puranasana.jpg"
+		},
+		{
+			"id": 3,
+			"name": "sukhásana",
+			"category": "dhyánásana",
+			"position": "sentado",
+			"tips": "As pernas se cruzam e os pés ficam por debaixo dos joelhos. Os homens colocam a perna esquerda por dentro e as mulheres a direita.",
+			"image": "http://melinaflores.org/wp-content/themes/melina/assanas/thumb/02_raja_puranasana.jpg"
+		}
+	]
+}
