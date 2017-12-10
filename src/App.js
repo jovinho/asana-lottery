@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Hero, Container, Title, SubTitle, Button } from 'reactbulma'
 import Main from './components/Main'
+import AsanaLottery from './components/AsanaLottery'
 
 class App extends Component {
 	constructor(props) {
@@ -18,9 +18,10 @@ class App extends Component {
   render() {
 		switch(this.state.SHOWING_COMPONENT) {
 			case 'MAIN':
+			default:
 				return (<Main onStartClick={this.onStartClick.bind(this)}/>)
 			case 'LOTTERY':
-				return (<h1> SORTEIO </h1>)
+				return (<AsanaLottery />)
 		}
   }
 }
