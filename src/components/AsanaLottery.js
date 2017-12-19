@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Hero, Container, Title, SubTitle, Button } from 'reactbulma'
-import AsanaGroupp from './AsanaGroup'
+import { Hero, Container } from 'reactbulma'
+import AsanaGroup from './AsanaGroup'
 
 class AsanaLottery extends Component {
 	constructor(props) {
@@ -31,7 +31,7 @@ class AsanaLottery extends Component {
 			<Hero dark bold fullheight>
 				<Hero.Body>
 					<Container className="main-container">
-						<AsanaGroupp onSortAsana={this.onSortAsana.bind(this)} asana={this.state.showingAsana}/>
+						<AsanaGroup onSortAsana={this.onSortAsana.bind(this)} asana={this.state.showingAsana}/>
 					</Container>
 				</Hero.Body>
 			</Hero>)

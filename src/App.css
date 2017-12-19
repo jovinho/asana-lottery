@@ -31,14 +31,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
 div.asana-box {
-  min-width: 88vw;
-  min-height: 35vh;
+  width: 88vw;
+  height: 35vh;
+  max-width: 400px;
+  min-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: 0.3s linear all;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  position: relative;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+div.asana-box.open {
+  transform: rotateY(180deg);
+}
+
+div.asana-box-front {
+  position: relative;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+div.asana-box-back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 1.25rem * 2);
+  height: calc(100% - 1.25rem * 2);
 }
 
 .media.media-asana-box {
@@ -63,6 +94,7 @@ div.asana-box {
 
   .main-container .main-title {
     font-size: 2.5rem !important;
+    text-align: center;
   }
 
   .asana-title {
