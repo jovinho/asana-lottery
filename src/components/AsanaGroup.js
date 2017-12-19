@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, Button, Title, SubTitle, Media, Image, Level, Content, Icon, Heading} from 'reactbulma'
+import { Box, Button, Title, Media, Content, Icon} from 'reactbulma'
 import AsanaName from './AsanaName'
 import AsanaImage from './AsanaImage'
 
@@ -18,23 +18,28 @@ class AsanaGroup extends Component {
 	}
 
 	onClickDisplayMode() {
-		console.log('ONCLICK')
 		if (this.state.displayMode === displayModes.NAME) {
 			this.setState({ displayMode: displayModes.IMAGE })
-			console.log('CHANGED 1', this.state)
 		} else {
-			console.log('CHANGED 1', this.state)
 			this.setState({ displayMode: displayModes.NAME })
 		}
 	}
 
+	getAsanaBoxClassName() {
+		const className = 'asana-box'
+		if (this.state.displayMode === displayModes.IMAGE) {
+			return `${className} open`
+		} else {
+			return className
+		}
+	}
+
 	render() {
-		console.log('DISPLAY MODE', this.state.displayMode)
 		if (this.props.asana !== null && this.props.asana !== undefined) {
 			return (
 				<article className="asana-article">
-					<Box className="asana-box">
-						<div class="asana-box-front">
+					<Box className={this.getAsanaBoxClassName()}>
+						<div className="asana-box-front">
 							<Media className="media-asana-box">
 								<AsanaName asana={this.props.asana} />
 							</Media>
@@ -47,7 +52,7 @@ class AsanaGroup extends Component {
 								</Icon>
 							</div>
 						</div>
-						<div class="asana-box-back">
+						<div className="asana-box-back">
 							<Media className="media-asana-box">
 								<AsanaImage asana={this.props.asana} />
 							</Media>
@@ -61,7 +66,10 @@ class AsanaGroup extends Component {
 							</div>
 						</div>
 					</Box>
-					<Button info large onClick={this.props.onSortAsana}> Sortear! </Button>
+					<Button info large onClick={() => {
+						this.setState({ displayMode: displayModes.NAME })
+						this.props.onSortAsana()
+					}}> Sortear! </Button>
 				</article>
 			)
 		} else {

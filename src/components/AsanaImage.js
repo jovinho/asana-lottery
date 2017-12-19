@@ -5,7 +5,7 @@ import { Media, Content, Image } from 'reactbulma'
 const AsanaImage = ({asana}) => (
 	<Media.Content>
 		<Content>
-			<Image is='256x256' src={asana.image} />
+			<Image is='128x128' className='asana-image' src={asana.image} />
 		</Content>
 	</Media.Content>
 )

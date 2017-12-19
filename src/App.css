@@ -51,7 +51,7 @@ div.asana-box {
 }
 
 div.asana-box.open {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 div.asana-box-front {
@@ -65,7 +65,7 @@ div.asana-box-front {
 div.asana-box-back {
   position: absolute;
   backface-visibility: hidden;
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   width: calc(100% - 1.25rem * 2);
@@ -75,6 +75,12 @@ div.asana-box-back {
 .media.media-asana-box {
   flex-grow: 1;
   align-items: center;
+}
+
+figure.image.asana-image {
+  height: 235px;
+  width: 250px;
+  margin: 0 auto;
 }
 
 .box-footer {
