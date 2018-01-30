@@ -38,7 +38,6 @@ div.asana-box {
   width: 88vw;
   height: 35vh;
   max-width: 400px;
-  min-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
