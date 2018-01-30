@@ -36,7 +36,7 @@
 
 div.asana-box {
   width: 88vw;
-  height: 35vh;
+  height: 45vh;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -77,8 +77,8 @@ div.asana-box-back {
 }
 
 figure.image.asana-image {
-  height: 235px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   margin: 0 auto;
 }
 
@@ -90,6 +90,29 @@ figure.image.asana-image {
 .asana-icon {
   font-size: 25px;
   cursor: pointer;
+}
+
+.asana-info-modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.asana-info-box {
+  width: 80vw;
+}
+
+.asana-info-content {
+  display: flex;
+  height: 400px;
+}
+
+.media-asana-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 @media(max-width: 700px) {

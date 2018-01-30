@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Box, Button, Title, Media, Content, Icon} from 'reactbulma'
 import AsanaName from './AsanaName'
 import AsanaImage from './AsanaImage'
+import AsanaInfoModal from './AsanaInfoModal'
 
 const displayModes = {
 	NAME: 'NAME',
@@ -13,7 +14,8 @@ class AsanaGroup extends Component {
 	constructor(props) {
     super(props)
     this.state = {
-			displayMode: displayModes.NAME
+			displayMode: displayModes.NAME,
+			isShowingModal: false
 		}
 	}
 
@@ -23,6 +25,14 @@ class AsanaGroup extends Component {
 		} else {
 			this.setState({ displayMode: displayModes.NAME })
 		}
+	}
+
+	onClickInfo () {
+		this.setState({ isShowingModal: !this.state.isShowingModal })
+	}
+
+	closeModal() {
+		this.setState({ isShowingModal: false })
 	}
 
 	getAsanaBoxClassName() {
@@ -44,7 +54,7 @@ class AsanaGroup extends Component {
 								<AsanaName asana={this.props.asana} />
 							</Media>
 							<div className="box-footer">
-								<Icon>
+								<Icon onClick={this.onClickInfo.bind(this)}>
 									<i className="fa fa-question asana-icon"/>
 								</Icon>
 								<Icon onClick={this.onClickDisplayMode.bind(this)}>
@@ -57,7 +67,7 @@ class AsanaGroup extends Component {
 								<AsanaImage asana={this.props.asana} />
 							</Media>
 							<div className="box-footer">
-								<Icon>
+								<Icon onClick={this.onClickInfo.bind(this)}>
 									<i className="fa fa-question asana-icon"/>
 								</Icon>
 								<Icon onClick={this.onClickDisplayMode.bind(this)}>
@@ -70,6 +80,8 @@ class AsanaGroup extends Component {
 						this.setState({ displayMode: displayModes.NAME })
 						this.props.onSortAsana()
 					}}> Sortear! </Button>
+
+					<AsanaInfoModal isOpen={this.state.isShowingModal} closeModal={this.closeModal.bind(this)}/>
 				</article>
 			)
 		} else {
